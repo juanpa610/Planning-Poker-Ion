@@ -1,0 +1,7 @@
+{
+  "name": "plannig-poker-ionic-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
