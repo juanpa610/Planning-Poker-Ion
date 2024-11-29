@@ -1,33 +1,11 @@
-<ion-content [fullscreen]="false">
+<ion-content class="conten-custom" [fullscreen]="false">
 
-  <ion-header class="ion-no-border " color="transparent" [translucent]="false">
-    <ion-toolbar class="ion-margin-top ion-margin-bottom">
-
-      <ion-grid>
-        <ion-row class="ion-align-items-center ion-justify-content-around ion-text-center ion-margin">
-          <ion-col size="auto" >
-            <img src="../../../assets/svgs/ficha-poker-pragma.svg" alt="Logo poker Pragma" class=" logo-poker" />
-          </ion-col>
-          <ion-col class="ion-margin-horizontal ion-justify-content-center">
-            <!-- <ion-title class="ion-text-capitalize"> <span class="ion-text-lowercase">{{gameService.nameGame}}</span></ion-title>
-            <ion-title class="ion-text-capitalize"> <span class="ion-text-lowercase">{{gameService.nameUser}}</span></ion-title> -->
-            <ion-title class="ion-text-capitalize"> <span class="ion-text-lowercase">gnameGame</span></ion-title>
-          </ion-col>
-          <ion-col size="auto" class="ion-margin-horizontal">
-            <ion-title class="ion-text-capitalize"> <span class="ion-text-lowercase">gnameUser</span></ion-title>
-            <ion-button class="ion-margin-vertical" shape="round" >
-            Invitar Jugadores
-            </ion-button>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-
-    </ion-toolbar>
-  </ion-header>
+  <app-header-game></app-header-game>
 
   <app-form-user></app-form-user>
 
- <app-table></app-table>
- 
+  <app-table></app-table>
+
+  <app-card-options></app-card-options>
 
 </ion-content>

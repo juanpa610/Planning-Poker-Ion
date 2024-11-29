@@ -1,0 +1,8 @@
+<section class="card-options">
+  <p>Elige una carta 👇</p>
+  <div class="card-options__container" >
+    <button *ngFor="let card of cards" (click)="selectCard(card)">
+      {{card.score}}
+    </button>
+  </div>
+</section>

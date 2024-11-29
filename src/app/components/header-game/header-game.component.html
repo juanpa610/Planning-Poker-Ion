@@ -1,0 +1,23 @@
+<ion-header class="ion-no-border " color="transparent" [translucent]="false">
+  <ion-toolbar class="toolbar-custom">
+    <ion-grid>
+      <ion-row class="ion-align-items-center ion-justify-content-between ion-text-center">
+        <ion-col class="ion-margin-end" size="auto" size-md="2">
+          <ion-img class="logo-poker" src="../../../assets/svgs/ficha-poker-pragma.svg"
+            alt="Logo poker Pragma"></ion-img>
+        </ion-col>
+        <ion-col size="2" size-md="6" class="ion-margin-vertical">
+          <ion-title class="ion-text-capitalize ion-text-strong">{{gameService.nameGame ? gameService.nameGame : 'ewhfwjgefwygefjwgyf'}}</ion-title>
+        </ion-col>
+        <ion-col class="col-custom-flex" size="auto" size-md="auto">
+          <p class="custom-item ion-text-uppercase ">
+            {{getAcronyNameUser()}}
+          </p>
+          <ion-button class="" fill="outline" shape="round">
+            Invitar jugadores
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>

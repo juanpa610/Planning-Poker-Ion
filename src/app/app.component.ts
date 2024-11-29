@@ -11,7 +11,7 @@ export class AppComponent {
  
   constructor(private loadingService: LoadingService,private router: Router) {
       // this.loadingService.show();
-      // router.navigate(['/home'])
+      // router.navigate(['/home']);
   }
   
 }

@@ -22,7 +22,7 @@ export class FormUserComponent  implements OnInit {
     role: ['', Validators.required]
   });
 
-  showModalUserForm: boolean = true; //TODO
+  showModalUserForm: boolean = false;
 
   constructor(private formBuilder: FormBuilder,
     private router: Router,

@@ -1,4 +1,4 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -8,8 +8,6 @@ export class LoadingService {
 
   private loadingSubject = new BehaviorSubject<boolean>(false); 
   loading$ = this.loadingSubject.asObservable();
-
-  $modal = new EventEmitter<boolean>();
 
   constructor() { }
 
