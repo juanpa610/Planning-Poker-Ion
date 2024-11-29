@@ -1,0 +1,31 @@
+<section class="form-user" *ngIf="showModalUserForm">
+
+  <article class="form-user__modal">
+
+    <ion-grid class="container-form">
+
+      <ion-row>
+
+        <ion-col>
+          <form [formGroup]="formUser" (ngSubmit)="onSubmit()">
+            <ion-input label="Tu Nombre" class="ion-margin-vertical" error-text="Ingresa un nombre correcto"
+              label-placement="floating" fill="outline" placeholder="Luisa" maxlength="20" formControlName="nameUser"
+              type="text" (ionInput)='validateCharacterForm()'></ion-input>
+            <ion-radio-group formControlName="role" class="ion-margin">
+              <ion-radio class="ion-margin-horizontal" value="player" aria-label="Jugador">Jugador</ion-radio>
+              <ion-radio class="ion-margin-horizontal" value="viewer" aria-label="Espectador">Espectador</ion-radio>
+            </ion-radio-group>
+            <ion-button class="ion-margin-vertical" shape="round" expand="full" strong="true" type="submit"
+              [disabled]="formUser.invalid">
+              Continuar
+            </ion-button>
+          </form>
+        </ion-col>
+
+      </ion-row>
+
+    </ion-grid>
+
+  </article>
+
+</section>

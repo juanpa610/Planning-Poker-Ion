@@ -1,0 +1,35 @@
+@use "../../../theme/variables.scss" as *;
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: radial-gradient(50% 50% at 50% 50%, #330072 0%, rgba(31, 13, 63, 0.7) 100%);
+}
+
+.logo-poker {
+    height: 60px;
+    animation: opacity 2s linear infinite;
+
+    @keyframes opacity {
+        0% {
+            opacity: 0;
+            background-position: -50%;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            background-position: 150%;
+        }
+    }
+}
+
+.text-pragma {
+    height: 42px;
+}
+

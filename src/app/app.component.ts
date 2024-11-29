@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { LoadingService } from './services/loading.service';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+ 
+  constructor(private loadingService: LoadingService,private router: Router) {
+      // this.loadingService.show();
+      // router.navigate(['/home'])
+  }
+  
 }

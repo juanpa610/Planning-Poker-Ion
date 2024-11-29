@@ -1,0 +1,42 @@
+<ion-content [fullscreen]="true">
+
+  <ion-header class="ion-no-border " color="transparent" [translucent]="true">
+    <ion-toolbar class="ion-margin-top ion-margin-bottom">
+
+      <ion-grid>
+        <ion-row class="ion-align-items-center ion-margin">
+          <ion-col size="auto">
+            <img src="../../../assets/svgs/ficha-poker-pragma.svg" alt="Logo poker Pragma" class=" logo-poker" />
+          </ion-col>
+          <ion-col class="ion-margin-horizontal">
+            <ion-title class="ion-text-capitalize">crear <span class="ion-text-lowercase">partida</span></ion-title>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-grid class="container-form">
+
+    <ion-row class="">
+      <ion-col class=" ">
+        <form [formGroup]="gameForm" (ngSubmit)="onSubmit()" class="">
+          <ion-input label="Nombra la partida" error-text="Ingresa el nombre de la partida" label-placement="floating"
+            fill="outline" maxlength="20" formControlName="nameGame" type="text" (ionInput)='validateCharacterForm()'
+            placeholder="Sprint 32"></ion-input>
+          <ion-button class="ion-margin-top" shape="round" expand="full" strong="true" type="submit"
+            [disabled]="gameForm.invalid">
+            Crear partida
+          </ion-button>
+        </form>
+      </ion-col>
+
+    </ion-row>
+
+
+
+  </ion-grid>
+
+</ion-content>

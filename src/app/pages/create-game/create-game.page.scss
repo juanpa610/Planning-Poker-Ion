@@ -1,0 +1,45 @@
+@use "../../../theme/variables.scss" as *;
+
+ion-content  {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
+    --background: radial-gradient(50% 50% at 50% 50%, #330072 0%, rgba(31, 13, 63, 0.7) 100%);
+
+    ion-toolbar {
+        --background: transparent; 
+    }
+
+    .container-form {
+        height: 70%;
+        width: 100%;
+        display: grid;
+        place-content: center;
+        
+        // Mas alto que ancho
+        @media (orientation: portrait) {
+            height: 70%;
+        }
+        
+        // Mas ancho que alto
+        @media (orientation: landscape) {
+            height: 50%;
+        }
+    }
+
+}
+.logo-poker {
+    height: 60px;
+}
+
+ion-button {
+    --background:  white;
+    --color: black;
+  
+}
