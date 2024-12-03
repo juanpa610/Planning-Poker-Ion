@@ -7,11 +7,11 @@
     align-items: center;
     min-height: 100vh;
     width: 100%;
-    background: radial-gradient(50% 50% at 50% 50%, #330072 0%, rgba(31, 13, 63, 0.7) 100%);
+    background: $color-background-main;
 }
 
 .logo-poker {
-    height: 60px;
+    height: 3.75rem;
     animation: opacity 2s linear infinite;
 
     @keyframes opacity {
@@ -19,9 +19,11 @@
             opacity: 0;
             background-position: -50%;
         }
+
         50% {
             opacity: 1;
         }
+
         100% {
             opacity: 0;
             background-position: 150%;
@@ -30,6 +32,5 @@
 }
 
 .text-pragma {
-    height: 42px;
+    height: 2.625rem;
 }
-

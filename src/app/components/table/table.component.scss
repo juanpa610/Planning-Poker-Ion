@@ -1,4 +1,4 @@
-$primary-color : rgba(100, 41, 205, 1);
+@use '../../../theme/variables.scss' as *;
 
 .table-poker {
     width: 100%;
@@ -9,64 +9,67 @@ $primary-color : rgba(100, 41, 205, 1);
     display: grid;
     place-content: center;
 
-    div {
-        border-radius: 276px;
-    }
-
-    >div {
-        border: 2px solid $primary-color ;
-        box-shadow: 0px 0px 20px 0px rgba(189, 189, 255, 0.2) inset;
-        box-shadow: 0px 0px 15px 0px $primary-color ;
-
+    .table-container {
+        border-radius: 17.25rem;
+        border: 2px solid $color-primary;
+        box-shadow: 0 0 20px 0 rgba(189, 189, 255, 0.2) inset;
+        box-shadow: 0 0 15px 0 $color-primary ;
         max-width: 32.5625rem;
         position: relative;
 
-        >div {
+        &__cards-cotainer {
+            border: 1px solid red;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        &__middle-border {
+            border-radius: 17.25rem;
             position: absolute;
             width: 95%;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             height: 90%;
+            border: 2px solid $color-primary ;
+            box-shadow: 0 0 20px 0 rgba(189, 189, 255, 0.6) inset;
+            box-shadow: 0 12px 24px 0 rgba(100, 41, 205, 0.6);
+        }
 
-            border: 2px solid $primary-color ;
-            box-shadow: 0px 0px 20px 0px rgba(189, 189, 255, 0.6) inset;
-            box-shadow: 0px 12px 24px 0px rgba(100, 41, 205, 0.6);
-
-            >div {
-                position: absolute;
-                width: 95%;
-                height: 90%;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                border: 1px solid $primary-color ;
-                box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.06);
-                background: rgba(31, 13, 63, 0.6);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
+        &__end-border {
+            border-radius: 17.25rem;
+            position: absolute;
+            width: 95%;
+            height: 90%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid $color-primary ;
+            box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.06);
+            background: rgba(31, 13, 63, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
-
 }
 
 @media (orientation: portrait) {
     .table-poker {
 
-        >div {
+        .table-container {
             min-height: 25rem;
             width: 16rem;
 
-            >div {
+            &__middle-border {
                 height: 90%;
                 width: 90%;
+            }
 
-                >div {
-                    height: 93%;
-                    width: 90%;
-                }
+            &__end-border {
+                height: 93%;
+                width: 90%;
             }
         }
 
@@ -76,23 +79,50 @@ $primary-color : rgba(100, 41, 205, 1);
 @media (orientation: landscape) {
     .table-poker {
 
-        >div {
+        .table-container {
             min-height: 17rem;
             width: 32.5625rem;
-
-            >div {
-
-                >div {}
-            }
         }
     }
 }
 
 ion-button {
-    --background: rgba(100, 41, 205, 1);
-    --color: white;
+    background: $color-primary;
+    border-radius: 3rem;
+    --color: $color-white;
     text-transform: initial;
-    --border-color: rgba(100, 41, 205, 1);
-    --border-width: 5px;
+    border-color: $color-primary;
+    --border-width: 0;
     font-weight: 600;
+}
+
+.card-cotainer {
+    outline: .1px solid red;
+
+    // position: absolute;
+    &__score {
+        width: 2.1875rem;
+        height: 3.75rem;
+
+        &--viewer {
+            background: rgba(189, 189, 255, 1);
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: grid;
+            place-content: center;
+        }
+
+        &--player {
+
+            border-radius: 0.4375rem;
+            opacity: 0px;
+            border: 1px solid rgba(187, 101, 255, 1);
+            background: transparent;
+            box-shadow: 0px 0px 6px 0px rgba(189, 189, 255, 0.6) inset;
+            box-shadow: 0px 5px 10px 0px rgba(100, 41, 205, 0.6);
+        }
+    }
+
+    &--viewer {}
 }

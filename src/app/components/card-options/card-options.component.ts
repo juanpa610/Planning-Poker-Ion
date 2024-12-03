@@ -9,7 +9,7 @@ import { GameService } from '../../services/game.service';
 })
 export class CardOptionsComponent  implements OnInit {
 
-  cards: Card[] = [
+  cardFibonacciOptions: Card[] = [
     { score: '0'  },
     { score: '1'  },
     { score: '3'  },
@@ -35,10 +35,11 @@ export class CardOptionsComponent  implements OnInit {
   }
 
 
-  selectCardRandom(){
-    let indexRandom = Math.floor(Math.random() * this.cards.length);
-   
-    console.log( this.cards[indexRandom])
+  selectCardRandom() {
+    const indexRandom = Math.floor(Math.random() * this.cardFibonacciOptions.length);
+    const score = this.cardFibonacciOptions[indexRandom].score;
+    const scoreFinal = score == '?' || score == '☕' ? score : parseInt(score);
+    // console.log(scoreFinal);
   }
 
 }

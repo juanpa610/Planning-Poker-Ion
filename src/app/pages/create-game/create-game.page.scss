@@ -1,6 +1,6 @@
 @use "../../../theme/variables.scss" as *;
 
-ion-content  {
+.content {
     padding: 0;
     margin: 0;
     display: flex;
@@ -10,10 +10,10 @@ ion-content  {
     min-height: 100vh;
     height: 100vh;
     width: 100%;
-    --background: radial-gradient(50% 50% at 50% 50%, #330072 0%, rgba(31, 13, 63, 0.7) 100%);
+    background: $color-background-main ;
 
     ion-toolbar {
-        --background: transparent; 
+        --background: transparent;
     }
 
     .container-form {
@@ -21,12 +21,12 @@ ion-content  {
         width: 100%;
         display: grid;
         place-content: center;
-        
+
         // Mas alto que ancho
         @media (orientation: portrait) {
             height: 70%;
         }
-        
+
         // Mas ancho que alto
         @media (orientation: landscape) {
             height: 50%;
@@ -34,11 +34,12 @@ ion-content  {
     }
 
 }
+
 .logo-poker {
-    height: 60px;
+    height: 3.75rem;
 }
 
 ion-button {
-    --background:  white;
+    --background: white;
     --color: black;
 }

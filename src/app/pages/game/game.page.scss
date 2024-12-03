@@ -1,4 +1,6 @@
-.conten-custom  {
+@use '../../../theme/variables.scss' as *;
+
+.conten-custom {
     padding: 0;
     margin: 0;
     display: flex;
@@ -9,9 +11,21 @@
     height: 100vh;
     width: 100%;
     --background: radial-gradient(50% 50% at 50% 50%, #330072 0%, rgba(31, 13, 63, 0.7) 100%);
+    --background: radial-gradient(50% 50% at 50% 50%, #330072 0%, #1F0D3F 100%);
 
-    app-header-game{
+    app-header-game {
         --min-height: 7rem;
     }
 }
 
+@media (orientation: portrait) {
+    .conten-custom {
+        --background: radial-gradient(50% 50% at 50% 50%, #330072 0%, rgba(31, 13, 63, 0.7) 100%);
+    }
+}
+
+@media (orientation: landscape) {
+    .conten-custom {
+        --background: radial-gradient(50% 50% at 50% 50%, #330072 0%, #1F0D3F 100%);
+    }
+}

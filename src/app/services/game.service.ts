@@ -1,20 +1,23 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { Card } from '../interfaces/game.interface';
+import { BehaviorSubject, map, Observable } from 'rxjs';
+import { Card, Role, User } from '../interfaces/game.interface';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameService {
 
-  private _nameGame : string = '';
-  private _nameUser : string = '';
-  private _roleUser : 'player' | 'viewer' | string = '';
+  private _nameGame : string = 'Sprint 32';
+  private _nameUser : string = 'Juan pablo';
+  private _roleUser : Role = 'playerOwner';
 
   private cardSubject = new BehaviorSubject<Card>({score: ''}); 
   cardScore$ = this.cardSubject.asObservable();
 
-  constructor() { }
+  constructor(private http: HttpClient ) { 
+   
+   }
 
   newGame(nameGame: string) {
     this._nameGame = nameGame;
@@ -31,7 +34,7 @@ export class GameService {
     return this._nameUser;
   }
 
-  setRoleUser(roleUser: string) {
+  setRoleUser(roleUser: Role) {
     this._roleUser = roleUser;
   }
 
@@ -41,6 +44,14 @@ export class GameService {
 
   setCartScore(card: Card) {
     this.cardSubject.next(card);
+  }
+
+  getUsersGame() : Observable<User[]>{
+    return this.http.get<{ users: User[] }>('/../assets/files/users.json').pipe(
+      map((response) =>
+        response.users
+      )
+    )
   }
 
 }

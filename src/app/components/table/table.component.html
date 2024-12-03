@@ -1,11 +1,23 @@
 <section class="table-poker">
-    <div>
-      <div>
-        <div>
-          <ion-button class="" fill="outline" shape="round">
-            Revelar cartas
-          </ion-button>
+  <div class="table-container">
+
+    <div class="table-container__cards-cotainer">
+      <div class="card-cotainer" *ngFor="let user of users, let i = index">
+        <div class="card-cotainer__score" [ngClass]="{
+          'card-cotainer__score--viewer': user.role == 'viewer', 
+          'card-cotainer__score--player': user.role == 'player' ,
+          'card-cotainer__score--playerOwner': user.role == 'playerOwner'}">
+          <span class="" *ngIf="user.role == 'viewer'">{{getAcronyNameUser(user.name) | uppercase}}</span>
         </div>
+        <p class="card-cotainer__name">{{user.name}}</p>
       </div>
     </div>
+
+    <div class="table-container__middle-border">
+      <div class="table-container__end-border">
+        <ion-button class="" fill="outline" shape="round">Revelar cartas</ion-button>
+      </div>
+    </div>
+
+  </div>
 </section>
